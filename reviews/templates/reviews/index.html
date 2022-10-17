@@ -8,6 +8,7 @@
   <thead>
     <tr>
       <th scope="col">번호</th>
+      <th scope="col">Thumbnail</th>
       <th scope="col">리뷰 제목</th>
       <th scope="col">영화 제목</th>
       <th scope="col">평점</th>
@@ -17,10 +18,13 @@
   <tbody>
     {% for r in reviews %}
     <tr>
-      <th scope="row">{{r.id}}</th>
-      <td><a class="text-decoration-none" href="{% url 'reviews:detail' r.pk %}"> {{r.title}}</a></td>
-      <td>{{r.movie_name}}</td>
-      <td>{{r.grade}} 점</td>
+      <th scope="row"><br>{{r.id}}</th>
+      {% if r.thumbnail %}
+      <td><img src="{{ r.thumbnail.url }}" alt="{{ r.thumbnail }}"></td>
+      {% endif %}
+      <td><br><a class="text-decoration-none" href="{% url 'reviews:detail' r.pk %}"> {{r.title}}</a></td>
+      <td><br>{{r.movie_name}}</td>
+      <td><br>{{r.grade}} 점</td>
     </tr>
     {% endfor %}
 

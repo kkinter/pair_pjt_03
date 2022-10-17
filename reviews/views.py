@@ -15,7 +15,7 @@ def index(request):
 def create(request):
     form = ReviewForm()
     if request.method == "POST":
-        form = ReviewForm(request.POST)
+        form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('reviews:index')
@@ -24,6 +24,7 @@ def create(request):
     }
 
     return render(request, 'reviews/create.html', context)
+
 def detail(request, pk):
     review = Review.objects.get(pk=pk)
     context ={

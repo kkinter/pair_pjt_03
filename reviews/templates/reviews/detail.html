@@ -10,15 +10,17 @@
           <th scope="col">내용</th>
           <th scope="col">평점</th>
           <th scope="col">작성 시간</th>
+          <th scope="col">이미지</th>
         </tr>
       </thead>
     <tbody>
-        <th scope="row">내용</th>
-        <td> {{review.title}}</td>
-        <td>{{review.movie_name}}</td>
-        <td>{{review.content}}</td>
-        <td>{{review.grade}} 점</td>
-        <td>{{review.created_at}}</td>
+        <th scope="row"><br>내용</th>
+        <td><br>{{review.title}}</td>
+        <td><br>{{review.movie_name}}</td>
+        <td><br>{{review.content}}</td>
+        <td><br>{{review.grade}} 점</td>
+        <td><br>{{review.created_at}}</td>
+        <td><img src="{{ review.image.url }}" alt="review.image" width="170" height="100"></td>
     </tbody>
 </table>
 <div class="m-3">
